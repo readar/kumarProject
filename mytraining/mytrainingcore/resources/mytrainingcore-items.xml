@@ -161,7 +161,39 @@
 			
 		</attributes>
 		</itemtype>
+		
+		
+		<itemtype code="Product"
+		autocreate="false"
+		generate="false">
+		<attributes>
+			  <attribute autocreate="true" qualifier="productPrice" type="java.lang.Integer">
+                    <persistence type="property"/>
+                    <modifiers read="true" write="true" optional="true"/>
+                </attribute>
+                
+                 <attribute autocreate="true" qualifier="productShortInfo" type="java.lang.String">
+                    <persistence type="property"/>
+                    <modifiers read="true" write="true" optional="true"/>
+                </attribute>
+                
+                   <attribute autocreate="true" qualifier="firstName" type="java.lang.String">
+                    <persistence type="property"/>
+                    <modifiers read="true" write="true" optional="true"/>
+                </attribute>
+                
+                  <attribute autocreate="true" qualifier="lastName" type="java.lang.String">
+                    <persistence type="property"/>
+                    <modifiers read="true" write="true" optional="true"/>
+                </attribute>
+                
+                <attribute autocreate="true" qualifier="fullName" type="java.lang.String">
+                    <persistence type="dynamic" attributeHandler="manojDynamicHandler"/>
+                    <modifiers read="true" write="true" optional="true"/>
+                </attribute>
+		</attributes>		
+		</itemtype>
+		
 	</typegroup>
-
     </itemtypes>
 </items>
