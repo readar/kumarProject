@@ -35,4 +35,12 @@
 		<property name="shortDescription" type="java.lang.String"/>
 		<property name="prodPrice" type="java.lang.Double"/>
 	</bean>
+	<bean class="com.mytraining.facades.product.data.HybrisProductData">
+		<property name="clientId" type="java.lang.String"/>
+		<property name="clientName" type="java.lang.String"/>
+		<property name="revenue" type="java.lang.String"/>
+		<property name="clientInfo" type="java.lang.String"/>
+		<property name="clientType" type="java.lang.String"/>
+	</bean>
+	
 </beans>
