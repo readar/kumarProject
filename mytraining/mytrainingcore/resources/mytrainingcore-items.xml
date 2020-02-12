@@ -25,6 +25,14 @@
             <value code="WHITE"/>
             <value code="YELLOW"/>
         </enumtype>
+        
+        
+        <enumtype generate="true" code="ClientTypeEnum" autocreate="true" dynamic="true">
+            <value code="SILVER"/>
+            <value code="GOLD"/>
+            <value code="PLATINUM"/>
+        </enumtype>
+        
     </enumtypes>
 
 	<relations>
@@ -187,13 +195,48 @@
                     <modifiers read="true" write="true" optional="true"/>
                 </attribute>
                 
-                <attribute autocreate="true" qualifier="fullName" type="java.lang.String">
+                <!-- <attribute autocreate="true" qualifier="fullName" type="java.lang.String">
                     <persistence type="dynamic" attributeHandler="manojDynamicHandler"/>
                     <modifiers read="true" write="true" optional="true"/>
-                </attribute>
+                </attribute> -->
 		</attributes>		
 		</itemtype>
 		
 	</typegroup>
+	
+	<typegroup>
+		<itemtype code="HybrisProduct"
+		autocreate="true" generate="true">
+		<deployment table="HybrisProductTable" typecode="11010"/>
+		<attributes>
+		
+			<attribute type="java.lang.String" qualifier="clientId">
+				<modifiers/>
+				<persistence type="property"></persistence>
+			</attribute>
+			
+			<attribute type="java.lang.String" qualifier="clientName">
+				<modifiers/>
+				<persistence type="property"></persistence>
+			</attribute>
+			
+			<attribute type="java.lang.String" qualifier="revenue">
+				<modifiers/>
+				<persistence type="property"></persistence>
+			</attribute>
+			
+			<attribute type="java.lang.String" qualifier="clientInfo">
+				<modifiers/>
+				<persistence type="property"></persistence>
+			</attribute>
+			<attribute type="ClientTypeEnum" qualifier="clientType">
+				<modifiers/>
+				<persistence type="property"></persistence>
+			</attribute>
+			
+		</attributes>		
+		</itemtype>		
+	</typegroup>
+	
     </itemtypes>
 </items>
