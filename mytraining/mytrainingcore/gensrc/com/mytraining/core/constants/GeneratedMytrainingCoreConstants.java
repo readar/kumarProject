@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 04-Feb-2020, 9:04:37 AM                     ---
+ * --- Generated at 11-Feb-2020, 9:43:51 AM                     ---
  * ----------------------------------------------------------------
  */
 package com.mytraining.core.constants;
@@ -26,7 +26,14 @@ public class GeneratedMytrainingCoreConstants
 	}
 	public static class Attributes
 	{
-		// no constants defined.
+		public static class Product
+		{
+			public static final String FIRSTNAME = "firstName".intern();
+			public static final String FULLNAME = "fullName".intern();
+			public static final String LASTNAME = "lastName".intern();
+			public static final String PRODUCTPRICE = "productPrice".intern();
+			public static final String PRODUCTSHORTINFO = "productShortInfo".intern();
+		}
 	}
 	public static class Enumerations
 	{

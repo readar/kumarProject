@@ -6,6 +6,10 @@
 
 	<bean class="de.hybris.platform.commercefacades.product.data.ProductData">
 		<property name="genders" type="java.util.List&lt;com.mytraining.facades.product.data.GenderData>"/>
+		<property name="productShortInfo" type="String"/>
+		<property name="firstName" type="String"/>
+		<property name="lastName" type="String"/>
+		<property name="fullName" type="String"/>		
 	</bean>
 
 	<bean class="com.mytraining.facades.product.data.GenderData">
@@ -25,5 +29,10 @@
 		<property name="categoryCode" type="String"/>
 		<property name="categoryName" type="String"/>
 		<property name="categoryInfo" type="String"/>
+	</bean>
+	
+	<bean class="com.mytraining.facades.product.data.SaiProductData">
+		<property name="shortDescription" type="java.lang.String"/>
+		<property name="prodPrice" type="java.lang.Double"/>
 	</bean>
 </beans>

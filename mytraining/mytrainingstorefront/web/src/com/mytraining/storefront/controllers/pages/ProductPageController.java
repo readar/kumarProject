@@ -32,6 +32,9 @@ import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.product.ProductService;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.util.Config;
+
+import com.mytraining.custom.facade.SaiProductFacade;
+import com.mytraining.facades.product.data.SaiProductData;
 import com.mytraining.storefront.controllers.ControllerConstants;
 
 import java.io.UnsupportedEncodingException;
@@ -110,6 +113,9 @@ public class ProductPageController extends AbstractPageController
 
 	@Resource(name = "futureStockFacade")
 	private FutureStockFacade futureStockFacade;
+	
+	@Resource(name = "saiProductFacade")
+	private SaiProductFacade saiProductFacade;
 
 	@RequestMapping(value = PRODUCT_CODE_PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
 	public String productDetail(@PathVariable("productCode") final String encodedProductCode, final Model model,
@@ -132,7 +138,7 @@ public class ProductPageController extends AbstractPageController
 
 
 		populateProductDetailForDisplay(productCode, model, request, extraOptions);
-
+		model.addAttribute("prodInfo", saiProductFacade.getDescription(productCode));
 		model.addAttribute(new ReviewForm());
 		model.addAttribute("pageType", PageType.PRODUCT.name());
 		model.addAttribute("futureStockEnabled", Boolean.valueOf(Config.getBoolean(FUTURE_STOCK_ENABLED, false)));

@@ -549,4 +549,7 @@
 		<property name="manojProductDao" ref="manojProductDao"></property>
 	</bean>
 	
+	<bean id="manojDynamicHandler" class="com.mytraining.custom.handler.ManojDynamicHandler">
+	</bean>
+	
 </beans>

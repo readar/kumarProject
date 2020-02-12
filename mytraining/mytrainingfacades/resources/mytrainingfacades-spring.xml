@@ -184,7 +184,9 @@
 	<bean id="genderData" class="com.mytraining.facades.product.data.GenderData" scope="prototype"/>
 	
 	
-	<bean id="manojProductPopulator" class="com.mytraining.custom.populator.ManojProductPopulator"/>
+	<bean id="manojProductPopulator" class="com.mytraining.custom.populator.ManojProductPopulator">
+		<property name="manojCategoryConverter" ref="manojCategoryConverter"/>
+	</bean>
 	
 	<bean id="manojProductConverter" parent="abstractPopulatingConverter">
 		<property name="targetClass" value="com.mytraining.facades.product.data.ManojProductData"/>
@@ -210,5 +212,30 @@
 		<property name="manojProductConverter" ref="manojProductConverter"/>
 	</bean>
 	
+	
+	<bean id="saiProductPopulator" class="com.mytraining.custom.populator.SaiProductPopulator">	
+	</bean>
+	
+	<bean id="saiProductConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.mytraining.facades.product.data.SaiProductData"/>
+		<property name="populators">
+			<list>
+				<ref bean="saiProductPopulator"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="saiProductFacade" class="com.mytraining.custom.facade.impl.SaiProductFacadeImpl">
+		<property name="productService" ref="productService"/>
+	</bean>
+	
+    <alias name="customProductPopulator" alias="productPopulator"/>
+    <bean id="customProductPopulator"
+          class="com.mytraining.custom.populator.CustomProductPopulator"
+          parent="defaultProductPopulator">
+        <property name="productBasicPopulator" ref="productBasicPopulator"/>
+        <property name="variantSelectedPopulator" ref="variantSelectedPopulator"/>
+        <property name="productPrimaryImagePopulator" ref="productPrimaryImagePopulator"/>
+    </bean>
 	
 </beans>
