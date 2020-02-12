@@ -722,9 +722,9 @@
 			ref="flexibleSearchService"></property>
 	</bean>
 
-	<bean id="HybrisProductServiceImpl"
+	<bean id="hybrisProductServiceImpl"
 		class="com.mytraining.custom.service.impl.HybrisProductServiceImpl">
-		<property name="hybrisProductDao" ref="hybrisProductDao"></property>
+		<property name="hybrisProductDao" ref="hybrisProductDaoImpl"></property>
 	</bean>
 
 </beans>

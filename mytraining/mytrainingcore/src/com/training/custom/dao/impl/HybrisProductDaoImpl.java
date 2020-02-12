@@ -22,6 +22,23 @@ public class HybrisProductDaoImpl implements HybrisProductDao
 
 	private FlexibleSearchService flexibleSearchService;
 
+	/**
+	 * @return the flexibleSearchService
+	 */
+	public FlexibleSearchService getFlexibleSearchService()
+	{
+		return flexibleSearchService;
+	}
+
+	/**
+	 * @param flexibleSearchService
+	 *           the flexibleSearchService to set
+	 */
+	public void setFlexibleSearchService(final FlexibleSearchService flexibleSearchService)
+	{
+		this.flexibleSearchService = flexibleSearchService;
+	}
+
 	@Override
 	public HybrisProductModel getHybrisProduct(final String clientId)
 	{
@@ -40,13 +57,6 @@ public class HybrisProductDaoImpl implements HybrisProductDao
 
 	}
 
-	/**
-	 * @return
-	 */
-	private FlexibleSearchService getFlexibleSearchService()
-	{
 
-		return flexibleSearchService;
-	}
 
 }

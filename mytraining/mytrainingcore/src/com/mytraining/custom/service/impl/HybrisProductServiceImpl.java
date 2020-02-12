@@ -17,7 +17,6 @@ public class HybrisProductServiceImpl implements HybrisProductService
 
 	private HybrisProductDao hybrisProductDao;
 
-
 	/**
 	 * @return the hybrisProductDao
 	 */
@@ -25,7 +24,6 @@ public class HybrisProductServiceImpl implements HybrisProductService
 	{
 		return hybrisProductDao;
 	}
-
 
 	/**
 	 * @param hybrisProductDao
@@ -35,7 +33,6 @@ public class HybrisProductServiceImpl implements HybrisProductService
 	{
 		this.hybrisProductDao = hybrisProductDao;
 	}
-
 
 	@Override
 	public HybrisProductModel getHybrisProductById(final String clientId)

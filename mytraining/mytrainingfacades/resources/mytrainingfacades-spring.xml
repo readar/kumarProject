@@ -263,7 +263,7 @@
 	<bean id="hybrisProductFacadeImpl"
 		class="com.mytraining.custom.facade.impl.HybrisProductFacadeImpl">
 		<property name="hybrisProductConverter" ref="hybrisProductConverter"></property>
-		<property name="hybrisProductService" ref="hybrisProductService"></property>
+		<property name="hybrisProductService" ref="hybrisProductServiceImpl"></property>
 	</bean>
-	<!-- hybris product ************* end ******************** -->
+	<!-- hybris product ************* end ******************** test -->
 </beans>
