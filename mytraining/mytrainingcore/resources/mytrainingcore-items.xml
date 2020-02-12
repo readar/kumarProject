@@ -195,10 +195,10 @@
                     <modifiers read="true" write="true" optional="true"/>
                 </attribute>
                 
-                <!-- <attribute autocreate="true" qualifier="fullName" type="java.lang.String">
+                <attribute autocreate="true" qualifier="fullName" type="java.lang.String">
                     <persistence type="dynamic" attributeHandler="manojDynamicHandler"/>
                     <modifiers read="true" write="true" optional="true"/>
-                </attribute> -->
+                </attribute>
 		</attributes>		
 		</itemtype>
 		
