@@ -237,5 +237,33 @@
         <property name="variantSelectedPopulator" ref="variantSelectedPopulator"/>
         <property name="productPrimaryImagePopulator" ref="productPrimaryImagePopulator"/>
     </bean>
+    
+    
+    <!-- hybris product ************* start ******************** -->
+        <bean id="hybrisProductPopulator"
+		class="com.mytraining.custom.populator.HybrisProductPopulator">
+	</bean>
 	
+	<bean id="hybrisProductPopulatorSecond"
+		class="com.mytraining.custom.populator.HybrisProductPopulatorSecond">
+	</bean>
+	
+	<bean id="hybrisProductConverter" parent="abstractPopulatingConverter">
+		<!-- <lookup-method name="createTarget" bean="variantOptionData"/> -->
+		<property name="targetClass"
+			value="com.mytraining.facades.product.data.HybrisProductData" />
+		<property name="populators">
+			<list>
+				<ref bean="hybrisProductPopulator" />
+				<ref bean="hybrisProductPopulatorSecond" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="hybrisProductFacadeImpl"
+		class="com.mytraining.custom.facade.impl.HybrisProductFacadeImpl">
+		<property name="hybrisProductConverter" ref="hybrisProductConverter"></property>
+		<property name="hybrisProductService" ref="hybrisProductService"></property>
+	</bean>
+	<!-- hybris product ************* end ******************** -->
 </beans>
